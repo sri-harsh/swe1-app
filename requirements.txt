@@ -1,2 +1,6 @@
 gunicorn
 django-heroku
+django
+coverage
+coveralls
+pyyaml
