@@ -9,7 +9,6 @@ before_script:
 script:
   - black .
   - flake8 --max-line-length=92
-  - coverage run --source=mysite manage.py test
-  - coverage run --source=polls manage.py test
+  - coverage run --source=mysite,polls manage.py test
 after_script:
   - coveralls
