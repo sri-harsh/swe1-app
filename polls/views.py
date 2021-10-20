@@ -1,8 +1,7 @@
-from django.http import HttpResponse, HttpResponseRedirect, Http404
+from django.http import HttpResponseRedirect
 from .models import Choice, Question
 from django.urls import reverse
 from django.shortcuts import get_object_or_404, render
-from django.template import loader
 from django.views import generic
 
 
@@ -34,7 +33,7 @@ def vote(request, question_id):
         return render(
             request,
             "polls/detail.html",
-            {"question": question, "error_message": "You didn't select a choice.",},
+            {"question": question, "error_message": "You didn't select a choice.", },
         )
     else:
         selected_choice.votes += 1
